@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFF8E7">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🎯 나의 저축 목표"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvGoalGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="첫 목표를 설정해 주세요"
+        android:textSize="15sp"
+        android:layout_marginTop="8dp" />
+
+    <ListView
+        android:id="@+id/lvGoals"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/etGoalName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="목표 이름 (예: 여행 자금)"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/etGoalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="목표 금액 (원)"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnSetGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="목표 설정하기"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← 홈으로"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

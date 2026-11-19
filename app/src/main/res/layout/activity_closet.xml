@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFF8E7">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="👗 펫 옷장"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/frameClosetPet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/ivClosetPet"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/pet1"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/ivClosetItem"
+            android:layout_width="70dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="30dp"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvClosetInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="현재 XP: 0 · 아이템을 터치해 장착/해제"
+        android:gravity="center"
+        android:textSize="14sp" />
+
+    <GridView
+        android:id="@+id/gvItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="3"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:background="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnClosetBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← 홈으로"
+        android:layout_marginTop="12dp" />
+</LinearLayout>

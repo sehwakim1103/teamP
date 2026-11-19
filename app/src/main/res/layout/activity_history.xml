@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFF8E7">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📒 저축 기록"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvHistoryTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="총 저축: 0원"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />
+
+    <ListView
+        android:id="@+id/lvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tvHistoryEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="아직 저축 기록이 없어요. 첫 저축을 해볼까요? 🐣"
+        android:gravity="center"
+        android:padding="16dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnHistoryBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← 홈으로"
+        android:layout_marginTop="12dp" />
+</LinearLayout>
