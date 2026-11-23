@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(this, "불러오기 실패: " + e.getMessage(), Toast.LENGTH_LONG).show());
     }
 
-    // 미접속 일수에 따른 펫 대사
+
     private String getAbsenceMessage() {
         if (lastAccessAt == 0) return "오늘도 왔네!";
         long days = (System.currentTimeMillis() - lastAccessAt) / (1000L * 60 * 60 * 24);
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         return "오늘도 왔네!";
     }
 
-    // 저축/수입/지출 기록
+
     private void saveRecord() {
         String s = etAmount.getText().toString().trim();
         if (s.isEmpty()) {
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         android.widget.LinearLayout.LayoutParams flp =
                 (android.widget.LinearLayout.LayoutParams) framePet.getLayoutParams();
         float dd = getResources().getDisplayMetrics().density;
-        flp.topMargin = (int) ((xp >= 1000000 ? 40 : 16) * dd);   // 3단계 40dp, 나머지 16dp
+        flp.topMargin = (int) ((xp >= 1000000 ? 40 : 16) * dd);
         framePet.setLayoutParams(flp);
 
         int[] imgs = {
@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // 목표 설정/수정 팝업
+
     private void showGoalDialog() {
         LinearLayout box = new LinearLayout(this);
         box.setOrientation(LinearLayout.VERTICAL);
@@ -330,7 +330,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    // 날씨 가져와서 날씨별 절약 미션 문구 표시
+
     private void loadWeather() {
         WeatherHelper.fetch(new WeatherHelper.Callback() {
             @Override

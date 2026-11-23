@@ -44,7 +44,7 @@ public class HistoryActivity extends AppCompatActivity {
         FirebaseFirestore.getInstance().collection("users").document(uid)
                 .collection("records").whereEqualTo("type", "saving").get()
                 .addOnSuccessListener(snap -> {
-                    // 최신순 정렬을 위해 (날짜, 금액) 목록으로 모은 뒤 정렬
+
                     List<long[]> rows = new ArrayList<>();
                     long total = 0;
                     for (DocumentSnapshot d : snap) {
@@ -57,7 +57,7 @@ public class HistoryActivity extends AppCompatActivity {
                     Collections.sort(rows, new Comparator<long[]>() {
                         @Override
                         public int compare(long[] a, long[] b) {
-                            return Long.compare(b[0], a[0]);   // 최신이 위로
+                            return Long.compare(b[0], a[0]);
                         }
                     });
 

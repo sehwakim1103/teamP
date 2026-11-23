@@ -52,7 +52,7 @@ public class ReportActivity extends AppCompatActivity {
         loadReport();
     }
 
-    // 수입/지출 입력 팝업
+
     private void showAddDialog(final String type) {
         LinearLayout box = new LinearLayout(this);
         box.setOrientation(LinearLayout.VERTICAL);
@@ -97,7 +97,7 @@ public class ReportActivity extends AppCompatActivity {
     }
 
     private void loadReport() {
-        // 이번 달 1일 00:00 / 지난달 1일 00:00
+
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.DAY_OF_MONTH, 1);
         cal.set(Calendar.HOUR_OF_DAY, 0);
@@ -167,7 +167,7 @@ public class ReportActivity extends AppCompatActivity {
                         tvPetReview.setText("리포트를 불러오지 못했어요: " + e.getMessage()));
     }
 
-    // 펫의 한 달 평가
+
     private String makeReview(long saving, long lastSaving, long diff) {
         if (saving == 0 && lastSaving == 0) {
             return "우리의 첫 한 달이 시작됐어! 오늘부터 하나씩 모아보자!";

@@ -51,7 +51,7 @@ public class GoalActivity extends AppCompatActivity {
         loadGoals();
     }
 
-    // 목표 추가 (첫 목표이거나 추가 목표)
+
     private void addGoal() {
         String name = etGoalName.getText().toString().trim();
         String amountStr = etGoalAmount.getText().toString().trim();
@@ -81,7 +81,7 @@ public class GoalActivity extends AppCompatActivity {
                         Toast.makeText(this, "저장 실패: " + e.getMessage(), Toast.LENGTH_LONG).show());
     }
 
-    // 저축 합계를 구한 뒤 목표 목록 표시
+
     private void loadGoals() {
         db.collection("users").document(uid).collection("records")
                 .whereEqualTo("type", "saving").get()

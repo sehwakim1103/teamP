@@ -15,11 +15,11 @@ import java.util.TimeZone;
 
 public class WeatherHelper {
 
-    // 공공데이터포털 일반 인증키 (Decoding) 를 따옴표 안에 붙여넣기
+
     private static final String API_KEY = "3a96a752fe207af7bbef079650ffb0acd428a2bcb59e478dc1445a223b5b07b1";
 
     public interface Callback {
-        void onResult(String temp, int pty);   // temp: 기온(℃), pty: 강수형태(0 없음, 1 비, 3 눈 등)
+        void onResult(String temp, int pty);
         void onError(String msg);
     }
 
@@ -28,7 +28,7 @@ public class WeatherHelper {
             try {
                 TimeZone tz = TimeZone.getTimeZone("Asia/Seoul");
                 Calendar c = Calendar.getInstance(tz);
-                // 정시 자료는 10분 뒤에 올라오므로, 10분 전이면 한 시간 전 자료 사용
+
                 if (c.get(Calendar.MINUTE) < 10) c.add(Calendar.HOUR_OF_DAY, -1);
 
                 SimpleDateFormat dF = new SimpleDateFormat("yyyyMMdd", Locale.KOREA);
@@ -56,7 +56,7 @@ public class WeatherHelper {
                 br.close();
                 String body = sb.toString();
 
-                // 키 오류 등은 JSON이 아니라 XML 문장으로 올 수 있어요
+
                 if (!body.trim().startsWith("{")) {
                     cb.onError(body.length() > 120 ? body.substring(0, 120) : body);
                     return;
