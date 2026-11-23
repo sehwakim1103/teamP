@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ClosetActivity extends AppCompatActivity {
 
-    // 아이템 정보 (세 배열은 개수와 순서가 항상 같아야 해요)
+
     private final String[] NAMES = {"빨간 리본", "분홍 리본", "초록 리본",
             "빨간 장갑", "분홍 장갑", "초록 장갑",
             "산타 모자", "초록 산타 모자", "왕관"};
@@ -29,7 +29,7 @@ public class ClosetActivity extends AppCompatActivity {
     };
     private final long[] NEED_XP = {10000, 50000, 80000, 130000, 200000, 300000, 500000, 800000, 1000000};
 
-    // 장갑 위치 {너비dp, 높이dp, marginTop dp, marginStart dp} (옷장 기준, 장갑 3종 공통)
+
     static final int[] GLOVE_POS = {140, 120, 28, 2};
 
     static final int[] HAT_POS = {75, 75, -55, 8};
@@ -68,7 +68,7 @@ public class ClosetActivity extends AppCompatActivity {
     private ItemAdapter adapter;
 
     private long xp = 0;
-    private String equipped = "";   // 장착 중인 아이템 이름 (없으면 빈 문자열)
+    private String equipped = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,7 +187,7 @@ public class ClosetActivity extends AppCompatActivity {
 
     static final int[] CROWN_POS = {90, 80, -65, 0};
 
-    // 왕관이면 true (NAMES 순서상 8번)
+
     static boolean isCrown(int idx) {
         return idx == 8;
     }
@@ -223,15 +223,15 @@ public class ClosetActivity extends AppCompatActivity {
             tvName.setText(NAMES[position]);
             ivImg.setImageResource(IMAGES[position]);
 
-            if (xp < NEED_XP[position]) {                       // 잠김
+            if (xp < NEED_XP[position]) {
                 ivImg.setAlpha(0.25f);
                 tvStatus.setText("🔒 XP " + NEED_XP[position] + " 필요");
                 v.setBackgroundColor(0xFFEEEEEE);
-            } else if (equipped.equals(NAMES[position])) {      // 장착 중
+            } else if (equipped.equals(NAMES[position])) {
                 ivImg.setAlpha(1f);
                 tvStatus.setText("✅ 장착 중");
                 v.setBackgroundColor(0xFFFFF3C4);
-            } else {                                            // 장착 가능
+            } else {
                 ivImg.setAlpha(1f);
                 tvStatus.setText("장착 가능");
                 v.setBackgroundColor(0xFFFFFFFF);
